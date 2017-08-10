@@ -39,9 +39,9 @@ class Wechat extends \Cms\Classes\ComponentBase
         $wechat = app('wechat');
         $wechat->server->setMessageHandler(function($message){
             return "欢迎关注 overtrue！";
-        });
+        }); 
 
-        Log::info('return response.');
+        //\Log::info('return response.');
 
         return $wechat->server->serve();
         // $this->addJs('/plugins/beysong/proevent/assets/pingpp/src/pingpp-pc.js');
