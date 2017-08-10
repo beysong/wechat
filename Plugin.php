@@ -6,9 +6,15 @@ class Plugin extends PluginBase
 {
     public function registerComponents()
     {
+      return [
+	        'Beysong\Wechat\Components\Wechat' => 'Wechat'
+	    ];
     }
 
     public function registerSettings()
     {
+    }
+    public function boot(){
+      \App::register('\Overtrue\LaravelWechat\ServiceProvider');
     }
 }

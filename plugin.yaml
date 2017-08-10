@@ -4,3 +4,26 @@ plugin:
     author: beysong
     icon: oc-icon-adjust
     homepage: ''
+navigation:
+    main-menu-item:
+        label: Wechat
+        url: beysong/wechat
+        icon: icon-adjust
+        permissions:
+            - admin
+        order: '12'
+        sideMenu:
+            side-menu-item:
+                label: config
+                url: beysong/wechat/config
+                icon: icon-sitemap
+                permissions:
+                    - admin
+                attributes: {  }
+permissions:
+    admin:
+        tab: Admin
+        label: Admin
+    editor:
+        tab: Editor
+        label: Editor
