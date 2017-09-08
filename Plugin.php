@@ -7,7 +7,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
       return [
-	        'Beysong\Wechat\Components\Wechat' => 'Wechat'
+	        'Beysong\Wechat\Components\Wechat' => 'Wechat',
+    	    'Beysong\Wechat\Components\Session' => 'Session'
 	    ];
     }
 
