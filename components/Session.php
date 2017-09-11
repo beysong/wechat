@@ -100,8 +100,8 @@ class Session extends \RainLab\User\Components\Session
         if (!$isAuthenticated && $allowedGroup == self::ALLOW_USER) {
             if($this->checkWechat()){
                 if (empty($_SESSION['wechat_user'])) {
-                    $_SESSION['target_url'] = '/';
-                    return $oauth->redirect();
+                    $_SESSION['target_url'] = '/ajax';
+                    return $oauth->scopes('snsapi_userinfo')->redirect();
                     // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
                     // $oauth->redirect()->send();
                 }
