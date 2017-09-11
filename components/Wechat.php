@@ -24,7 +24,7 @@ class Wechat extends \Cms\Classes\ComponentBase
      */
     public function onRun()
     {
-        print_r(session('wechat.oauth_user'));
+        // print_r(session('wechat.oauth_user'));
         if(\Request::wantsJson()){
             $options = [
                 'debug'  => true,
