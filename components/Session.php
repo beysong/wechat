@@ -66,10 +66,10 @@ class Session extends \RainLab\User\Components\Session
         $wechat = app('wechat');
         $oauth = $wechat->oauth;
         Event::listen('Overtrue\LaravelWeChat\Events\WeChatUserAuthorized', function($event)
-{
-    var_dump($event);
-});
-        var_dump($oauth);
+        {
+            var_dump($event);
+            var_dump($oauth->user()->toArray());
+        });
         return;
         // if($oauth->user()){
         //     $_SESSION['wechat_user'] = $user->toArray();
