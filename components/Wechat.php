@@ -28,9 +28,9 @@ class Wechat extends \Cms\Classes\ComponentBase
         if(\Request::wantsJson()){
             $options = [
                 'debug'  => true,
-                'app_id' => Config::get('beysong.wechat::appId', 50),
-                'secret' => 'testwechat',
-                'token'  => Config::get('beysong.wechat::appSecret', 500),
+                'app_id' => Config::get('beysong.wechat::app_id', 50),
+                'token' => Config::get('beysong.wechat::token', 500),
+                'secret'  => Config::get('beysong.wechat::secret', 500),
                 // 'aes_key' => null, // 可选
                 'log' => [
                     'level' => 'debug',
