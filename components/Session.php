@@ -63,7 +63,20 @@ class Session extends \RainLab\User\Components\Session
         $allowedGroup = $this->property('security', self::ALLOW_ALL);
         $isAuthenticated = Auth::check();
 
-        $wechat = app('wechat');
+        $options = [
+            'debug'  => true,
+            'app_id' => Config::get('beysong.wechat::app_id', 50),
+            'token' => Config::get('beysong.wechat::token', 500),
+            'secret'  => Config::get('beysong.wechat::secret', 500),
+            // 'aes_key' => null, // 可选
+            'log' => [
+                'level' => 'debug',
+                'file'  => '/tmp/easywechat.log', // XXX: 绝对路径！！！！
+            ],
+            //...
+        ];
+
+        $wechat = new Application($options);
         $oauth = $wechat->oauth;
         Event::listen('Overtrue\LaravelWeChat\Events\WeChatUserAuthorized', function($event)
         {
