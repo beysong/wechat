@@ -84,7 +84,7 @@ class Session extends \RainLab\User\Components\Session
             var_dump($event);
             var_dump($oauth->user()->toArray());
         });
-        return;
+        // return;
         // if($oauth->user()){
         //     $_SESSION['wechat_user'] = $user->toArray();
         //
