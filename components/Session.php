@@ -9,6 +9,7 @@ use Redirect;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use ValidationException;
+use Config;
 
 use EasyWeChat\Foundation\Application;
 
