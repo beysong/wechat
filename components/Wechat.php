@@ -38,7 +38,7 @@ class Wechat extends \Cms\Classes\ComponentBase
                 ],
                 //...
             ];
-            $wechat = app('wechat');
+            $wechat = new Application($options);
             $wechat->server->setMessageHandler(function($message){
                 switch ($message->MsgType) {
                     case 'event':
