@@ -28,14 +28,14 @@ class Wechat extends \Cms\Classes\ComponentBase
         if(\Request::wantsJson()){
             $options = [
                 'debug'  => true,
-                'app_id' => Config::get('beysong.wechat::app_id', 50),
-                'token' => Config::get('beysong.wechat::token', 500),
-                'secret'  => Config::get('beysong.wechat::secret', 500),
+                'app_id' => Config::get('beysong.wechat::app_id', 'wx31b92b41c42c99f4'),
+                'token' => Config::get('beysong.wechat::token', 'de61fe24fe3a274a8e80bc53bf10584d'),
+                'secret'  => Config::get('beysong.wechat::secret', 'dobechina'),
                 // 'aes_key' => null, // 可选
-                'log' => [
-                    'level' => 'debug',
-                    'file'  => '/tmp/easywechat.log', // XXX: 绝对路径！！！！
-                ],
+                // 'log' => [
+                //     'level' => 'debug',
+                //     'file'  => '/tmp/easywechat.log', // XXX: 绝对路径！！！！
+                // ],
                 //...
             ];
             $wechat = new Application($options);
