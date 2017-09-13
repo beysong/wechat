@@ -10,8 +10,8 @@ return [
     /**
      * 账号基本信息，请从微信公众平台/开放平台获取
      */
-    'app_id'  => 'wx31b92b41c42c99f4',         // AppID
-    'secret'  => 'de61fe24fe3a274a8e80bc53bf10584d',     // AppSecret
+    'app_id'  => 'wx07509507c23889dc',         // AppID
+    'secret'  => '51523fe58ee029351dfdef626a66dc94',     // AppSecret
     'token'   => 'dobechina',          // Token
     'aes_key' => '',                    // EncodingAESKey，安全模式下请一定要填写！！！
     /**

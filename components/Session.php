@@ -71,7 +71,7 @@ class Session extends \RainLab\User\Components\Session
             'secret'  => Config::get('beysong.wechat::secret', 500),
             'oauth' => [
                 'scopes'   => ['snsapi_userinfo'],
-                'callback' => 'https://www.themeshow.cn/error',
+                'callback' => 'http://www.themeshow.cn/error',
             ],
             // 'aes_key' => null, // 可选
             'log' => [
