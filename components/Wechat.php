@@ -20,12 +20,18 @@ class Wechat extends \Cms\Classes\ComponentBase
     }
 
     /**
-     * Executed when this component is bound to a page or layout.
-     */
+    * Executed when this component is bound to a page or layout.
+    */
     public function onRun()
     {
         // print_r(session('wechat.oauth_user'));
         if(\Request::wantsJson()){
+            $wechat = app('wechat');
+            $wechat->server->setMessageHandler(function($message){
+                return "欢迎关注 overtrue！";
+            });
+            //\Log::info('return response.');
+            return $wechat->server->serve();
             $options = [
                 'debug'  => true,
                 'app_id' => Config::get('beysong.wechat::app_id', 'wx31b92b41c42c99f4'),
@@ -43,10 +49,10 @@ class Wechat extends \Cms\Classes\ComponentBase
             $wechat->server->setMessageHandler(function($message){
                 switch ($message->MsgType) {
                     case 'event':
-                        if($message->Event == 'subscribe'){
+                    if($message->Event == 'subscribe'){
 
-                        }
-                        return '收到事件消息';
+                    }
+                    return '收到事件消息';
                     break;
                     case 'text':
                     return '收到文字消息';
