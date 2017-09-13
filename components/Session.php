@@ -70,7 +70,7 @@ class Session extends \RainLab\User\Components\Session
             'token' => Config::get('beysong.wechat::token', 500),
             'secret'  => Config::get('beysong.wechat::secret', 500),
             'oauth' => [
-                'scopes'   => ['snsapi_base'],
+                'scopes'   => ['snsapi_userinfo'],
                 'callback' => 'http://www.themeshow.cn/error',
             ],
             // 'aes_key' => null, // 可选
@@ -106,7 +106,7 @@ class Session extends \RainLab\User\Components\Session
             if($this->checkWechat()){
                 if (empty($_SESSION['wechat_user'])) {
                     $_SESSION['target_url'] = 'http://www.themeshow.cn/ajax';
-                    return $oauth->scopes(['snsapi_userinfo'])->redirect();
+                    return $oauth->scopes(['snsapi_base'])->redirect();
                     // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
                     // $oauth->redirect()->send();
                 }
