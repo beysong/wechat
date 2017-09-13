@@ -11,7 +11,7 @@ return [
     */
     'app_id'  => 'wx31b92b41c42c99f4',         // AppID
     'secret'  => 'de61fe24fe3a274a8e80bc53bf10584d',     // AppSecret
-    'token'   => 'testwechat',          // Token
+    'token'   => 'dobechina',          // Token
     'aes_key' => '',                    // EncodingAESKey，安全模式下请一定要填写！！！
     /**
     * 日志配置
