@@ -24,14 +24,15 @@ class Wechat extends \Cms\Classes\ComponentBase
     */
     public function onRun()
     {
+        $wechat = app('wechat');
+        $wechat->server->setMessageHandler(function($message){
+            return "欢迎关注 overtrue！";
+        });
+        //\Log::info('return response.');
+        return $wechat->server->serve();
         // print_r(session('wechat.oauth_user'));
         if(\Request::wantsJson()){
-            $wechat = app('wechat');
-            $wechat->server->setMessageHandler(function($message){
-                return "欢迎关注 overtrue！";
-            });
-            //\Log::info('return response.');
-            return $wechat->server->serve();
+
             $options = [
                 'debug'  => true,
                 'app_id' => Config::get('beysong.wechat::app_id', 'wx31b92b41c42c99f4'),
