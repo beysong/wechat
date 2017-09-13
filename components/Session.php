@@ -77,7 +77,8 @@ class Session extends \RainLab\User\Components\Session
             //...
         ];
 
-        $wechat = new Application($options);
+        // $wechat = new Application($options);
+        $wechat = app('wechat.official_account');
         $oauth = $wechat->oauth;
         Event::listen('Overtrue\LaravelWeChat\Events\WeChatUserAuthorized', function($event)
         {

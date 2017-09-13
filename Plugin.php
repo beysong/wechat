@@ -17,5 +17,8 @@ class Plugin extends PluginBase
     }
     public function boot(){
       \App::register('\Overtrue\LaravelWechat\ServiceProvider');
+        // Register aliases
+        $alias = AliasLoader::getInstance();
+        $alias->alias('LaravelWechat', 'Overtrue\LaravelWechat\Facade');
     }
 }
