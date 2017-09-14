@@ -69,10 +69,10 @@ class Session extends \RainLab\User\Components\Session
             'app_id' => Config::get('beysong.wechat::app_id', 50),
             'token' => Config::get('beysong.wechat::token', 500),
             'secret'  => Config::get('beysong.wechat::secret', 500),
-            'oauth' => [
-                'scopes'   => ['snsapi_userinfo'],
-                'callback' => 'http://www.themeshow.cn/error',
-            ],
+            // 'oauth' => [
+            //     'scopes'   => ['snsapi_userinfo'],
+            //     'callback' => 'http://www.themeshow.cn/error',
+            // ],
             // 'aes_key' => null, // 可选
             'log' => [
                 'level' => 'debug',
