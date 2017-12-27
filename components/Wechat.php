@@ -34,21 +34,21 @@ class Wechat extends \Cms\Classes\ComponentBase
         // print_r(session('wechat.oauth_user'));
         // if(\Request::wantsJson()){
 
-            $options = [
-                'debug'  => true,
-                'app_id' => Config::get('beysong.wechat::app_id', 'wx31b92b41c42c99f4'),
-                'token' => Config::get('beysong.wechat::token', 'de61fe24fe3a274a8e80bc53bf10584d'),
-                'secret'  => Config::get('beysong.wechat::secret', 'dobechina'),
-                // 'aes_key' => null, // 可选
-                // 'log' => [
-                //     'level' => 'debug',
-                //     'file'  => '/tmp/easywechat.log', // XXX: 绝对路径！！！！
-                // ],
-                //...
-            ];
-            $wechat = new Application($options);
-            // $wechat = app('wechat');
-            $wechat->server->setMessageHandler(function($message){
+            // $options = [
+            //     'debug'  => true,
+            //     'app_id' => Config::get('beysong.wechat::app_id', 'wx31b92b41c42c99f4'),
+            //     'token' => Config::get('beysong.wechat::token', 'de61fe24fe3a274a8e80bc53bf10584d'),
+            //     'secret'  => Config::get('beysong.wechat::secret', 'dobechina'),
+            //     // 'aes_key' => null, // 可选
+            //     // 'log' => [
+            //     //     'level' => 'debug',
+            //     //     'file'  => '/tmp/easywechat.log', // XXX: 绝对路径！！！！
+            //     // ],
+            //     //...
+            // ];
+            // $wechat = new Application($options);
+            $wechat = app('wechat.official_account');
+            $wechat->server->push(function($message){
                 switch ($message->MsgType) {
                     case 'event':
                     if($message->Event == 'subscribe'){

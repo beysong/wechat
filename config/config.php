@@ -5,12 +5,12 @@ return [
         'overtrue/laravel-wechat' => [
             // Service providers to be registered by your plugin
             'providers' => [
-                '\Overtrue\LaravelWechat\ServiceProvider',
+                'Overtrue\LaravelWeChat\ServiceProvider',
             ],
 
             // Aliases to be registered by your plugin in the form of $alias => $pathToFacade
             'aliases' => [
-                'EasyWeChat' => '\Overtrue\LaravelWechat\Facade',
+                'EasyWeChat' => '\Overtrue\LaravelWeChat\Facade',
             ],
 
             // The namespace to set the configuration under. For this example, this package accesses it's config via config('purifier.' . $key), so the namespace 'purifier' is what we put here

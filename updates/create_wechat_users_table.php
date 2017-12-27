@@ -12,8 +12,8 @@ class CreateWechatUsersTable extends Migration
           $table->engine = 'InnoDB';
           $table->increments('id');
           $table->integer('user_id')->unsigned();
-          $table->string('nickname')->nullable();
           $table->string('openid')->unique();
+          $table->string('nickname')->nullable();
           $table->string('sex')->nullable();
           $table->string('province')->nullable();
           $table->string('city')->nullable();
